@@ -1,0 +1,57 @@
+{% extends 'basic2.html' %}
+
+{% block title %}
+property bought
+{% endblock title %}
+
+{% block body %}
+
+<div class="jumbotron">
+    <div class="container pb-5">
+        <div class="row py-5">
+            <div class="col-md-5">
+                <div class="prop-pic">
+                    <img src="/media/{{p.image}}" alt="..." class="img-thumbnail">
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="prop-text">
+                    <br>
+                    <span class="badge badge-info">For Sale</span>
+                    <h5 class="p-title">{{p.pname}}</h5>
+                    <h6>Starts from: <span class="text-info">₹{{p.price}}/sqft</span></h6>
+                    <h6><i class="fa fa-map-marker text-info" aria-hidden="true"></i> {{p.p_address}}</h6>
+                    <h6><i class="fa fa-map-marker text-info" aria-hidden="true"></i> {{p.owner_id}}</h6>
+                    <br>
+                    <ul class="p-features">
+                        <li class="mr-5">
+                            <i class="fa fa-arrows text-info" style="font-size: x-large;"
+                                aria-hidden="true"></i>
+                            <p>{{p.size}} sqft</p>
+                        </li>
+                        <li class="mr-5">
+                            <i class="fa fa-building text-info" style="font-size: x-large;"
+                                aria-hidden="true"></i>
+                            <p>floor no. {{p.floor}}</p>
+                        </li>
+                        <li class="mr-5">
+                            <i class="fa fa-clock-o text-info" style="font-size: x-large;"
+                                aria-hidden="true"></i>
+                            <p>{{p.p_age}} years</p>
+                        </li>
+                        <li class="mr-5">
+                            <i class="fa fa-bed text-info" style="font-size: x-large;"
+                                aria-hidden="true"></i>
+                            <p>{{p.ptype}} BHK</p>
+                        </li>
+                    </ul>
+                    <a href="/search_property/"><input type="button" value="Back to home" class="btn btn-info"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

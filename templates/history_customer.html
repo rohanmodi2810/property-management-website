@@ -1,0 +1,49 @@
+{% extends 'basic.html' %}
+{% block css %}
+.input1{
+    display: block;
+
+    background: white;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-4">
+       <table class="table table-hover" style="border-radius: 25px;">
+          <thead>
+            <tr class="table-success">
+                  <th scope="col">#</th>
+                  <th scope="col">Owner id</th>
+                  <th scope="col">Customer id</th>
+                  <th scope="col">property id</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Sales id</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for i in p %}
+            <tr>
+              <th scope="row">&spades;</th>
+              <td>{{i.owner_id}}</td>
+              <td>{{i.cust_id}}</td>
+              <td>{{i.prop_id}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.sid}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+</div>
+
+{% endblock %}

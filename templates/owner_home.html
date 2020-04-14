@@ -1,0 +1,33 @@
+{% extends 'basic1.html' %}
+
+{% block title %}Home{% endblock %}
+{% block css%}
+.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+
+{% endblock %}
+{% block body%}
+<div class="container my-5">
+    <h1>WELCOME TO MegaCity.com</h1>
+    {% load static  %}
+    <img src="{% static 'property/2.jpeg' %}" style="height:200px;width:300px">
+    <a href="/add/"> <input type="button" class="input1 my-4" style="background:skyblue"  onclick="/add/" value="ADD PROPERTY"></a>
+    <a href="/update/"> <input type="button" class="input1 my-4" style="background:lightgreen"  onclick="/update/" value="UPDATE"></a>
+    <a href="/delete/"> <input type="button" class="input1 my-4" style="background:rgb(255,0,0,0.5)"  onclick="/delete/" value="DELETE"></a>
+    <a href="/myProperty/"> <input type="button" class="input1 my-4" style="background:lightgreen" onclick="/myProperty/" value="My properties"></a>
+    <a href="/predictPrice/"> <input type="button" class="input1 my-4" style="background:skyblue"  onclick="/predictPrice/" value="Estimate property Price"></a>
+</div>
+{% endblock %}

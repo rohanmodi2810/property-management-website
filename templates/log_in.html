@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+{% block title%}Sell Property{% endblock%}
+{% block css%}
+.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+
+{% endblock %}
+{% block body %}
+<div class="shadow-lg container">
+    <div class="row my-3" >
+        {% load static %}
+        <div class="col">
+            <img src='{% static "property/2.jpeg" %}' height="600px" width="500px" class="rounded my-3">
+            <br><br>
+        </div>
+
+        <div class="col">
+            <br><br><br>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}"><h3 style="color:black;">{{ message }}</h3></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <br><br><br><br><br><br><br>
+            <form action="/log_in_page_owner/">
+            <input type="submit" class="input1 my-4" style="background:lightgreen"  value="login"></a>
+            </form>
+            <br><br>
+            <form action="/signup_owner/">
+            <input type="submit" class="input1 my-4" style="background:lightgreen"  value="signup"></a>
+            </form>
+    </div>
+{% endblock %}

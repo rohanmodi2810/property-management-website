@@ -1,0 +1,45 @@
+{% extends 'basic.html' %}
+{% block title%}Sell Property{% endblock%}
+{% block css%}
+.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+
+{% endblock %}
+{% block body %}
+<div class="shadow-lg container">
+    <div class="row my-3" >
+        {% load static %}
+        <div class="col">
+            <img src='{% static "property/2.jpeg" %}' height="600px" width="500px" class="rounded my-3">
+            <br><br>
+        </div>
+
+        <div class="col">
+            <h1>Welcome to Megacity.com</h1>
+            <br><br>
+            <h3>Login As</h3><br><br><br>
+            <form action="/loginpage_owner/">
+                <input type="submit" class="input1 my-4" style="background:lightgreen"  onclick="/go_to_owner_home/" value="Owner"></a>
+            </form>
+            <br><br>
+            <form action="/loginpage_buyer/">
+                <input type="submit" class="input1 my-4" style="background:lightgreen"  onclick="/go_to_owner_home/" value="Buyer"></a>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

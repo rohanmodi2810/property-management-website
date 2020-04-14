@@ -1,0 +1,80 @@
+{% extends 'basic1.html' %}
+{% block css %}
+.input1{
+    display: block;
+
+    background: white;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-4">
+       <table class="table table-hover" style="border-radius: 25px;">
+          <thead>
+            <tr class="table-success">
+                  <th scope="col">PID</th>
+                  <th scope="col">Property Name</th>
+                  <th scope="col">Area</th>
+                  <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                <th>view</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+          {% for i in p %}
+            <tr>
+               <th scope="row">{{i.prop_id}}&spades;</th>
+              <td>{{i.pname}}</td>
+              <td>{{i.area}}</td>
+              <td>{{i.ptype}}</td>
+                <td>{{i.price}}</td>
+                <td><a href="/view_this/{{i.prop_id}}"><input type="button" value="View Details" class="input1"></a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    <h1>Sold Properties</h1>
+    <table class="table table-hover" style="border-radius: 25px;">
+          <thead>
+            <tr class="table-success">
+                  <th scope="col">PID</th>
+                  <th scope="col">Property Name</th>
+                  <th scope="col">Area</th>
+                  <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                <th>Sold To</th>
+                <th>view</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+          {% for i in s %}
+            <tr>
+                <th scope="row">{{i.prop_id}}&spades;</th>
+              <td>{{i.pname}}</td>
+              <td>{{i.area}}</td>
+              <td>{{i.ptype}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.owner_id}}</td>
+                <td><a href="/view_this/{{i.prop_id}}"><input type="button" value="View Details" class="input1"></a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+</div>
+
+{% endblock %}

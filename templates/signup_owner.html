@@ -1,0 +1,54 @@
+{% extends 'basic.html' %}
+{% block title%}Sell Property{% endblock%}
+{% block css%}
+.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+
+{% endblock %}
+{% block body %}
+<div class="shadow-lg container">
+    <div class="row my-3" >
+        {% load static %}
+        <div class="col">
+            <img src='{% static "property/2.jpeg" %}' height="600px" width="500px" class="rounded my-3">
+            <br><br>
+        </div>
+
+        <div class="col">
+            <br><br><br>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}"><h3 style="color:black;">{{ message }}</h3></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <br><br><br><br><br><br><br>
+            <form action="/register_seller/" method="post">
+                {% csrf_token %}
+                <input class="input1 my-3" type="text" name="username" placeholder="username" required>
+                <br><br>
+                <input class="input1 my-3" type="password" name="password" placeholder="password" required>
+                <br><br><br>
+                <input class="input1 my-3" type="password" name="password1" placeholder="password1" required>
+                <br><br><br>
+                <input class="input1 my-3" type="email" name="email-id" placeholder="email-id" required>
+                <br><br><br>
+                 <input class="btn btn-secondary my-3" placeholder="register"
+                       style="width:20%;margin-left:40%;border-radius:25px;" type="submit">
+            </form>
+    </div>
+{% endblock %}

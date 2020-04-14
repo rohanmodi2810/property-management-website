@@ -1,0 +1,66 @@
+{% extends 'basic.html' %}
+{% block title%}Sell Property{% endblock%}
+{% block css%}
+.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+textarea.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 100px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row my-5" >
+        {% load static %}
+        <div class="col">
+            <h1>Welcome to our family</h1>
+            <br>
+            <img src="{% static "property/logo1.jpeg" %}" height="600px" width="650px">
+        </div>
+        <div class="col">
+            {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li class="{{ message.tags }}"><h4 style="color:black;">{{ message }}</h4></li>
+                        {% endfor %}
+                    </ul>
+            {% endif %}
+            <h1 class="round circle float-right" style="font-family:Times New Roman">Please enter your details</h1>
+            <br><br><br><br><br><br>
+            <form action="/buyer_info/" method="post">
+                {% csrf_token %}
+                <input class="input1 my-3" type="text" name="First_name" placeholder="First name" required>
+                <input class="input1 my-3" type="text" name="Second_name" placeholder="Second name" required>
+                <input class="input1 my-3" type="number" name="contact" placeholder="Contact number" required>
+                <textarea class="input1 mt-3 px-4 py-2"  name="address" placeholder="Address" rows="4" required></textarea>
+                <br><br><br>
+                <input type="submit" style="width:20%;margin-left:40%;border-radius:25px;" class="btn btn-secondary" placeholder="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

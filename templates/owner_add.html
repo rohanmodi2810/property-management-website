@@ -1,0 +1,49 @@
+{% extends 'basic1.html' %}
+{% block title%}Sell Property{% endblock%}
+{% block css%}
+.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+
+{% endblock %}
+{% block body %}
+<div class="shadow-lg container">
+    <div class="row my-3" >
+        {% load static %}
+        <div class="col">
+            <img src='{% static "property/2.jpeg" %}' height="600px" width="500px" class="rounded my-3">
+        </div>
+        <div class="col">
+            <h1 class="round circle float-right my-2" style="font-family:Times New Roman">ADD PROPERTY</h1>
+            <form action="/add_property/" method="get">
+                <input class="input1 my-3" type="text" name="flate_name" placeholder="Flate name" required>
+                <input class="input1 my-3" type="number" name="ptype" placeholder="Property Type  (1BHK, 2BHK etc)" required>
+                <input class="input1 my-3" type="number" name="floor_no" placeholder="Floor No." required>
+                <input class="input1 my-3" type="number" name="price" placeholder="Price" required>
+                <input class="input1 my-3" type="number" name="size" placeholder="Size  (100 sq.feet)" required>
+                <input class="input1 my-3" type="number" name="age" placeholder="age of property" required>
+                <input class="input1 my-3" type="text" name="area" placeholder="city" required>
+                <textarea class="input1 mt-3 px-4 py-2" style="height:90px"  name="address" placeholder="Address" rows="4" required></textarea>
+                <div class="row p-3">
+                    <p class="input1 my-1 px-4 py-3" style="width:50%">Upload Image Here</p>
+                    <input class="input1 my-1  px-4 py-3" style="width:50%" type="file" name="image" placeholder="IMAGE" >
+                </div>
+                <input class="btn btn-secondary my-3" placeholder="ADD"
+                       style="width:20%;margin-left:40%;border-radius:25px;" type="submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

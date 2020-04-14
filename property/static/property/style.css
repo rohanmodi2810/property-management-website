@@ -1,0 +1,89 @@
+.bg-navbar{
+    background-color: rgb(0, 80, 134);
+}
+
+.icon-col{
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+h4.title {
+	font-size: 32px;
+	font-weight: 600;
+	color: #19191a;
+}
+ 
+.bg-light-grey{
+    background-color: rgba(111, 111, 111, 0.09);
+}
+
+.underline{
+    width: 100px;
+    height: 2px;
+    background-color: orangered;
+}
+
+.prop-pic img{
+    height: 280px;
+    min-width: 100%;
+    object-fit: contain;
+}
+
+.prop-text h5.p-title{
+    font-size: 28px;
+	color: #19191a;
+	font-weight: 600;
+}
+
+.prop-text h5.price{
+    font-size: 18px;
+	color: #19191a;
+	font-weight: 600;
+}
+
+.prop-text .p-features li{
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.pagination a {
+    text-decoration: none;
+}
+
+.pagination-number {
+    padding: 0.5em 0.8em;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #6D85C7;
+}
+
+.pagination-number:hover,
+.pagination-current {
+    background-color: #3354AA;
+}
+
+.pagination-action {
+    margin: 0 0.1em;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    color: #B9B9B9;
+    font-size: 1.3em;
+}
+
+.pagination-action:hover,
+.pagination-previous,
+.pagination-next {
+    color: #3354AA;
+}
+
+

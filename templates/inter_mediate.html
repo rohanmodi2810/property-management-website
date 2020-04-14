@@ -1,0 +1,56 @@
+{% extends 'basic.html' %}
+{% block title%}Sell Property{% endblock%}
+{% block css%}
+.input1{
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px;
+    border: none;
+    outline : none;
+}
+
+{% endblock %}
+{% block body %}
+<div class="shadow-lg container">
+    <div class="row my-3" >
+        {% load static %}
+        <div class="col">
+            <img src='{% static "property/2.jpeg" %}' height="600px" width="500px" class="rounded my-3">
+            <br><br>
+        </div>
+
+        <div class="col">
+            <h2>About Us</h2><br><br>
+            <p>Launched in 2005, Megacity.com, India’s No. 1 property portal, deals with every aspect of the consumers’ needs in the real estate industry.
+                It is an online forum where buyers, sellers and brokers/agents can exchange information about real estate properties quickly, effectively and inexpensively.
+                At Megacity.com, you can advertise a property, search for a property, browse through properties, build your own property microsite, and keep yourself updated with the latest news and trends making headlines in the realty sector.</p>
+            <br><br><h2>Why Megacity.com?</h2>
+            <p>
+                Megacity.com offers advertisement stints such as microsites, banners, home page links and project pages to the clients for better visibility and branding in the market.
+                With the ever-evolving online search behaviour, 99acres.com shares updated information pertinent to real estate activities, assisting prospective buyers to make informed buying decision. We make online property search easier, quicker and smarter!
+            </p>
+            <br><br><h2>Awards and reognization</h2>
+            <ul>
+                <li>PropTech Mobile App of the Year Award 2019</li>
+                <li>Best Mobile Appies Award 2015</li>
+                <li>CMO ASIA Awards 2012</li>
+                <li>BCI Awards 2012</li>
+                <li>Accommodation Times Awards 2012</li>
+            </ul>
+            <br><br><br>
+            <form action="/go_to_owner_home/">
+                <input type="submit" class="input1 my-4" style="background:lightgreen"  onclick="/go_to_owner_home/" value="GO TO YOUR ACCOUNT"></a>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

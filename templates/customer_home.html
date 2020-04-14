@@ -1,0 +1,140 @@
+{% extends 'basic2.html' %}
+{% block title %} Search your dream property here {% endblock %}
+
+{% block body %}
+
+    <!--search section-->
+    <section class="search-section my-4 container-fluid">
+        <div class="container shadow-lg">
+            <div class="container my-5 pt-5">
+                <div class="row">
+                    <h3>SEARCH PROPERTY</h3>
+                </div>
+            </div>
+            <div class="container pb-5">
+                <div class="row bg-light-grey py-5">
+                    <form method="GET" class="container-fluid row" action="/search_property/">
+
+                        <div class="col-md-6">
+                            <div class="col-auto my-auto" id="bhk">
+                                <label for="bhk">Property type</label>
+                                    <input type="number" name="bhk" class="form-control" placeholder="Property Type (1BHK etc)">
+                            </div><br>
+
+                            <div class="col-auto my-auto">
+                                <label for="price">Price</label>
+                                <div class="form-row" id="price">
+                                    <div class="col">
+                                        <input type="number" name="minprice" class="form-control" placeholder="minimum">
+                                    </div>
+                                    <div class="col">
+                                        <input type="numer" name="maxprice" class="form-control" placeholder="maximum">
+                                    </div>
+                                </div>
+                            </div><br>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-auto my-auto">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" name="location">
+                            </div><br>
+
+                            <div class="col-auto my-auto">
+                                <label for="size">Size</label>
+                                <div class="form-row" id="size">
+                                    <div class="col">
+                                        <input type="text" name="minsize" class="form-control" placeholder="minimum">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" name="maxsize" class="form-control" placeholder="maximum">
+                                    </div>
+                                </div>
+                            </div><br>
+                        </div>
+
+                <div class="col-auto mt-3 mx-auto">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--property section-->
+    <section class="property-section my-4 container-fluid">
+        <div class="container shadow-lg">
+            <div class="container my-5 pt-5">
+                <div class="row">
+                    <h3>PROPERTY</h3>
+                </div>
+                <div class="underline"></div>
+            </div>
+
+            <h3 style="text-align: center;"> {{val}} </h3>
+            {% for i in all_props %}
+            <div class="container pb-5">
+                <div class="row bg-light-grey py-5">
+                    <div class="col-md-5">
+                        <div class="prop-pic">
+                            <img src="/media/{{i.image}}" alt="..." class="img-thumbnail">
+                        </div>
+                    </div>
+
+                    <div class="col-md-7">
+                        <div class="prop-text">
+                            <br>
+                            <span class="badge badge-info">For Sale</span>
+                            <h5 class="p-title">{{i.pname}}</h5>
+                            <h6>Starts from: <span class="text-info">₹{{i.price}}</span></h6>
+                            <h6><i class="fa fa-map-marker text-info" aria-hidden="true"></i> {{i.area}}</h6>
+                            <h6><i class="fa fa-map-marker text-info" aria-hidden="true"></i> {{i.p_address}}</h6>
+                            <h6><i class="fa fa-map-marker text-info" aria-hidden="true"></i> {{i.owner_id}}</h6>
+                            <br>
+                            <ul class="p-features">
+                                <li class="mr-5">
+                                    <i class="fa fa-arrows text-info" style="font-size: x-large;"
+                                        aria-hidden="true"></i>
+                                    <p>{{i.size}} sqft</p>
+                                </li>
+                                <li class="mr-5">
+                                    <i class="fa fa-building text-info" style="font-size: x-large;"
+                                        aria-hidden="true"></i>
+                                    <p>floor no. {{i.floor}}</p>
+                                </li>
+                                <li class="mr-5">
+                                    <i class="fa fa-clock-o text-info" style="font-size: x-large;"
+                                        aria-hidden="true"></i>
+                                    <p>{{i.p_age}} years</p>
+                                </li>
+                                <li class="mr-5">
+                                    <i class="fa fa-bed text-info" style="font-size: x-large;"
+                                        aria-hidden="true"></i>
+                                    <p>{{i.ptype}} BHK</p>
+                                </li>
+                            </ul>
+                            <input type="button" value="BUY" onclick="confirm({{i.prop_id}})" class="btn btn-info">
+                        </div>
+                    </div>
+                </div>
+                <hr color="cyan">
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+<script>
+    function confirm(prop_id) {
+        window.alert("Confirm buying this property?");
+        window.location.href = "/done_buy/"+prop_id+"/";
+    }
+</script>
+
+{% endblock %}
+
+
+
+
+
+    
